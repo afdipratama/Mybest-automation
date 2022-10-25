@@ -22,5 +22,6 @@ How To Install :
 
 • node index.js
 
-// Masukan NIM & PASSWORD pada array :
+Notes : Masukan NIM & PASSWORD pada array
+
 ![image](https://user-images.githubusercontent.com/45161296/197681385-e71eaadf-61be-4012-b7b4-1316c612cdd7.png)
