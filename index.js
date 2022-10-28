@@ -4,6 +4,7 @@ const fs = require('fs');
 const readlineSync = require('readline-sync');
 const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+const chromePaths = require('chrome-paths');
 
 
 var login = 'http://elearning.bsi.ac.id/login';
@@ -38,6 +39,11 @@ puppeteer.use(AdblockerPlugin({
     
         const browser = await puppeteer.launch({
         headless: false,
+        ignoreHTTPSErrors: true,
+        executablePath: chromePaths.chrome,
+        userDataDir: './tmp',
+        slowMo: 0,
+        devtools: false,
         args: [
             '--no-sandbox',
             '--disable-notifications'
@@ -76,16 +82,29 @@ puppeteer.use(AdblockerPlugin({
              if (kelas === '5a') {
                 const timetable = readlineSync.question('Absensi Hari Apa : ')
                 if (timetable === 'senin') {
-                    console.log("Perhatikan Kelas yang kamu isi (ini senin)")
-                    await browser.close()
+                        await page.waitForSelector('.col-lg-4:nth-child(1) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
+                        await page.click('.col-lg-4:nth-child(1) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
+                        await sleep(2000);
+                        await page.waitForSelector('.col-xl-3 > .info-tiles > form > center > .btn')
+                        await page.click('.col-xl-3 > .info-tiles > form > center > .btn')
+                    await sleep(5000)
+                    await page.goto(logout)
                 }
                 if (timetable === 'rabu') {
-                    console.log("Perhatikan Kelas yang kamu isi (ini rabu)")
-                    await browser.close()
+                    await page.waitForSelector('.col-lg-4:nth-child(2) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
+                    await page.click('.col-lg-4:nth-child(2) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
+                    await page.waitForSelector('.col-xl-3 > .info-tiles > form > center > .btn')
+                    await page.click('.col-xl-3 > .info-tiles > form > center > .btn')
+                    await sleep(5000)
+                    await page.goto(logout)
                 }
                 if (timetable === 'kamis') {
-                    console.log("Perhatikan Kelas yang kamu isi (ini kamis)")
-                    await browser.close()
+                    await page.waitForSelector('.col-lg-4:nth-child(3) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
+                    await page.click('.col-lg-4:nth-child(3) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
+                    await page.waitForSelector('.col-xl-3 > .info-tiles > form > center > .btn')    
+                    await page.click('.col-xl-3 > .info-tiles > form > center > .btn')
+                    await sleep(5000)
+                    await page.goto(logout)
                 }
           } 
             else {
@@ -98,6 +117,7 @@ puppeteer.use(AdblockerPlugin({
                         await sleep(2000);
                         await page.waitForSelector('.col-xl-3 > .info-tiles > form > center > .btn')
                         await page.click('.col-xl-3 > .info-tiles > form > center > .btn')
+                        await sleep(5000)
                         await page.goto(logout)
                         }   else {
                             await sleep(1000);
@@ -108,9 +128,9 @@ puppeteer.use(AdblockerPlugin({
     
                                 await page.waitForSelector('.col-lg-4:nth-child(2) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
                                 await page.click('.col-lg-4:nth-child(2) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
-    
                                 await page.waitForSelector('.col-xl-3 > .info-tiles > form > center > .btn')
                                 await page.click('.col-xl-3 > .info-tiles > form > center > .btn')
+                                await sleep(5000)
                                 await page.goto(logout)
                                 }
                         } 
@@ -118,9 +138,9 @@ puppeteer.use(AdblockerPlugin({
     
                                         await page.waitForSelector('.col-lg-4:nth-child(3) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
                                         await page.click('.col-lg-4:nth-child(3) > .pricing-plan > .pricing-footer > .btn-group > .btn-primary')
-                                        // await page.waitForSelector('.col-xl-3 > .info-tiles > form > center > .btn')    
-                                        // await page.click('.col-xl-3 > .info-tiles > form > center > .btn')
-                                        console.log("Absensi Berhasil, Ingin Ulangi ? : (Y/N)")
+                                        await page.waitForSelector('.col-xl-3 > .info-tiles > form > center > .btn')    
+                                        await page.click('.col-xl-3 > .info-tiles > form > center > .btn')
+                                        await sleep(5000)
                                         await page.goto(logout)
                                     }
                                     
