@@ -13,17 +13,19 @@ var profile = 'http://elearning.bsi.ac.id/user/profile';
 var dashboard = 'http://elearning.bsi.ac.id/user/dashboard';
 var logout = 'http://elearning.bsi.ac.id/logout';
 
-var mhs = [{"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
-          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
-          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
-          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
-          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
-          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
-          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
-          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
-          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},];
+// MULTI THREAD
+var mhs = [{"nim" : "MASUKAN NIM", "password" : "MASUKAN PASSWORD"},
+           {"nim" : "MASUKAN NIM", "password" : "MASUKAN PASSWORD"},
+           {"nim" : "MASUKAN NIM", "password" : "MASUKAN PASSWORD"},
+           {"nim" : "MASUKAN NIM", "password" : "MASUKAN PASSWORD"},
+           {"nim" : "MASUKAN NIM", "password" : "MASUKAN PASSWORD"},
+           {"nim" : "MASUKAN NIM", "password" : "MASUKAN PASSWORD"},
+           {"nim" : "MASUKAN NIM", "password" : "MASUKAN PASSWORD"},
+           {"nim" : "MASUKAN NIM", "password" : "MASUKAN PASSWORD"},
+           {"nim" : "MASUKAN NIM", "password" : "MASUKAN PASSWORD"},];
 
 
+// SINGLE THREAD
 // var NIM = readlineSync.question('Masukan NIM\t: ')
 // var password = readlineSync.question('Masukan Password: ',{ hideEchoBack: true}); 
 
