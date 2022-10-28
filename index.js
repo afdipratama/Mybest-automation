@@ -14,6 +14,13 @@ var dashboard = 'http://elearning.bsi.ac.id/user/dashboard';
 var logout = 'http://elearning.bsi.ac.id/logout';
 
 var mhs = [{"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
+          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
+          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
+          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
+          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
+          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
+          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
+          {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},
           {"nim" : "MASUKAN NIM", "password" : "PASSWORD"},];
 
 
